@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-coordination-mcp-server"
+version = "0.1.0"
+description = "Slack for AI agents — rooms, messaging and context sharing for multi-agent coordination"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "AiAgentKarl"}]
+keywords = ["mcp", "agents", "coordination", "messaging", "multi-agent", "collaboration"]
+dependencies = ["mcp>=1.0.0", "pydantic>=2.0.0"]
+
+[project.urls]
+Homepage = "https://github.com/AiAgentKarl/agent-coordination-mcp-server"
+Repository = "https://github.com/AiAgentKarl/agent-coordination-mcp-server"
+
+[project.scripts]
+agent-coord = "src.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
